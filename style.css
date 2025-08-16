@@ -186,31 +186,37 @@ header {
   transform: scale(1.05);
 }
 
-/* Sections */
+/* General Section Styling */
 section {
   padding: 60px 20px;
   max-width: 1100px;
   margin: auto;
   box-sizing: border-box; /* ensures padding doesn’t break layout */
-  width: 100%;           /* allows it to shrink on mobile */
+  width: 100%;            /* allows shrinking on mobile */
+  overflow-x: hidden;     /* prevents horizontal scrolling */
 }
 
-/* Adjust spacing for mobile */
+/* Adjust spacing for tablets */
 @media (max-width: 768px) {
   section {
     padding: 40px 15px;
   }
 }
 
+/* Headings */
 section h2 {
   text-align: center;
   margin-bottom: 30px;
   color: #0066cc;
   font-size: 2rem;
+  word-break: break-word; /* safe wrapping */
 }
 
+/* Text */
 section p, section li {
   color: #555;
+  line-height: 1.6;
+  word-wrap: break-word;
 }
 
 /* Skills */
@@ -421,16 +427,21 @@ footer {
 }
 
 /* Contact section */
+/* Contact Section */
 .contact-section {
-  background: #fdeef3;   /* light pink */
+  background: #fdeef3;
   padding: 60px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-section h2 {
   text-align: center;
   margin-bottom: 40px;
+  color: #0066cc;
 }
 
+/* Layout wrapper */
 .contact-wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -438,9 +449,12 @@ footer {
   grid-template-columns: 1fr 1fr;  /* two columns desktop */
   gap: 40px;
   align-items: start;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-wrap: break-word;
 }
 
-/* Form */
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -463,6 +477,8 @@ footer {
   border-radius: 6px;
   padding: 12px;
   font-size: 1rem;
+  width: 100%; /* prevents overflow */
+  box-sizing: border-box;
 }
 
 .submit-btn {
@@ -483,7 +499,9 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 20px;
-  margin-left: 0; /* removed fixed left margin */
+  margin-left: 0; /* removed fixed margin */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .contact-details h3 { margin: 0; }
@@ -498,7 +516,7 @@ footer {
 /* Social icons */
 .social-row {
   display: flex;
-  flex-wrap: wrap; /* allow wrapping to prevent overflow */
+  flex-wrap: wrap; /* prevent overflow */
   gap: 12px;
   margin-top: auto;
 }
@@ -521,11 +539,25 @@ footer {
 @media (max-width: 900px) {
   .contact-wrap { 
     grid-template-columns: 1fr;   /* stack columns */
+    gap: 30px;
   }
   .two-col { 
     grid-template-columns: 1fr;   /* stack name/email */
   }
   .contact-details {
-    margin-top: 20px;  /* spacing between form and details */
+    margin-top: 20px;  
+    text-align: center; /* center align on smaller screens */
+  }
+  .social-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 40px 15px;
+  }
+  .contact-details {
+    font-size: 0.95rem;
   }
 }
