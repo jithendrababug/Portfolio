@@ -426,8 +426,76 @@ footer {
   box-shadow: 0 8px 15px rgba(0,0,0,0.1);
 }
 
+/* Certifications Section */
+.certifications-section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.certifications-section h2 {
+  font-size: 2rem;
+  color: #0066cc;
+  margin-bottom: 40px;
+}
+
+/* Grid layout */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Card styling */
+.cert-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.cert-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  color: #0a2ca6;
+}
+
+.cert-card .issuer {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.cert-card .date {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+/* View button */
+.cert-btn {
+  display: inline-block;
+  background: #0a2ca6;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.cert-btn:hover {
+  background: #07207b;
+}
+
 /* Contact section */
-/* Contact Section */
 .contact-section {
   background: #fdeef3;
   padding: 60px 20px;
