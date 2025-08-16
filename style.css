@@ -191,6 +191,15 @@ section {
   padding: 60px 20px;
   max-width: 1100px;
   margin: auto;
+  box-sizing: border-box; /* ensures padding doesn’t break layout */
+  width: 100%;           /* allows it to shrink on mobile */
+}
+
+/* Adjust spacing for mobile */
+@media (max-width: 768px) {
+  section {
+    padding: 40px 15px;
+  }
 }
 
 section h2 {
@@ -413,7 +422,7 @@ footer {
 
 /* Contact section */
 .contact-section {
-  background: #fdeef3;               /* light pink like your reference */
+  background: #fdeef3;   /* light pink */
   padding: 60px 20px;
 }
 
@@ -426,14 +435,23 @@ footer {
   max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;     /* two columns */
+  grid-template-columns: 1fr 1fr;  /* two columns desktop */
   gap: 40px;
   align-items: start;
 }
 
 /* Form */
-.contact-form { display: flex; flex-direction: column; gap: 16px; }
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
 
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field label { font-weight: 600; color: #333; }
@@ -448,7 +466,7 @@ footer {
 }
 
 .submit-btn {
-  background: #0a2ca6;               /* deep blue button */
+  background: #0a2ca6;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -460,6 +478,14 @@ footer {
 .submit-btn:hover { background: #07207b; transform: translateY(-1px); }
 
 /* Right column: details */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  margin-left: 0; /* removed fixed left margin */
+}
+
 .contact-details h3 { margin: 0; }
 .contact-details .role { margin: 6px 0 18px; font-weight: 600; }
 
@@ -469,8 +495,13 @@ footer {
 .contact-details a { color: inherit; text-decoration: none; }
 .contact-details a:hover { text-decoration: underline; }
 
-/* Social icons row at the end */
-.social-row { display: flex; gap: 12px; margin-top: 8px; }
+/* Social icons */
+.social-row {
+  display: flex;
+  flex-wrap: wrap; /* allow wrapping to prevent overflow */
+  gap: 12px;
+  margin-top: auto;
+}
 .social {
   width: 44px; height: 44px;
   border-radius: 50%;
@@ -486,40 +517,15 @@ footer {
 .social.li { background:#0A66C2; }
 .social.gh { background:#000000; }
 
-/* Responsive */
+/* Responsive Fixes */
 @media (max-width: 900px) {
-  .contact-wrap { grid-template-columns: 1fr; }
-  .two-col { grid-template-columns: 1fr; }   /* Name/Email stack on small screens */
-}
-
-/* Contact layout alignment fix */
-.contact-wrap {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: stretch; /* ensures both columns match height */
-}
-
-/* Push down the right column a bit */
-.contact-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* evenly spaces details and icons */
-  padding-top: 20px; /* adjust for desired vertical shift */
-  margin-left: 50px;
-}
-
-/* Make social icons stick to bottom of details */
-.social-row {
-  margin-top: auto;
-  display: flex;
-  gap: 12px;
-}
-
-@media (max-width: 768px) {
+  .contact-wrap { 
+    grid-template-columns: 1fr;   /* stack columns */
+  }
+  .two-col { 
+    grid-template-columns: 1fr;   /* stack name/email */
+  }
   .contact-details {
-    margin-left: 0;
+    margin-top: 20px;  /* spacing between form and details */
   }
 }
