@@ -13,6 +13,7 @@ body {
 }
 
 /* Navbar */
+/* Navbar */
 header {
   background: #ffffff;
   padding: 15px 0;
@@ -36,27 +37,28 @@ header {
   font-weight: bold;
   color: #0066cc;
 }
+
 .navbar-logo {
   display: flex;
   align-items: center;
 }
 
 .navbar-logo img {
-  margin-right: 10px; /* reduce spacing between image and name */
+  margin-right: 10px;
 }
 
 .navbar-logo .logo {
-  margin: 0;         /* remove all extra margin */
-  padding: 0;        /* remove extra padding */
-  line-height: 1;    /* reduce line spacing */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
 .nav-profile-pic {
-  width: 35px;   /* small and clean */
+  width: 35px;
   height: 35px;
-  border-radius: 50%; /* circular image */
+  border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #007bff; /* optional border */
+  border: 2px solid #007bff;
 }
 
 .nav-links {
@@ -89,6 +91,40 @@ header {
   left: 0;
   background: #0066cc;
 }
+
+/* Hamburger menu (hidden on desktop) */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* hidden by default */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    gap: 15px;
+  }
+
+  .nav-links.active {
+    display: flex; /* show menu when toggled */
+  }
+
+  .hamburger {
+    display: block; /* show hamburger icon */
+  }
+}
+
 
 /* Hero Section */
 .hero {
