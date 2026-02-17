@@ -44,7 +44,7 @@ export default function Hero() {
           {/* headline */}
           <motion.h1
             variants={item}
-            className="mt-6 text-[2.7rem] sm:text-[3.3rem] lg:text-[4rem] font-semibold leading-[1.05]"
+            className="mt-6 text-4xl md:text-6xl font-bold leading-tight text-gray-900 dark:text-white"
           >
             <span className="text-white">
               Full-Stack <span className="text-white/80">Software Developer</span>
