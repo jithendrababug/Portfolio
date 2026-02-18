@@ -135,7 +135,7 @@ export default function Projects() {
                 variants={card}
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 240, damping: 18 }}
-                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 backdrop-blur shadow-2xl"
+                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-white/5 backdrop-blur shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-[1.01]"
               >
                 {/* top glow */}
                 <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-300">

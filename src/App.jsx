@@ -9,13 +9,19 @@ import Skills from "./components/Skills";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 import Certifications from "./components/Certification";
+import CursorGlow from "./components/CursorGlow";
 import PremiumBackground from "./components/PremiumBackground";
 import ScrollToTop from "./components/ScrollToTop";
+import ScrollProgress from "./components/ScrollProgress";
+
+
 
 export default function App() {
   return (
     <div className="font-sans min-h-screen">
+      <CursorGlow />
       <PremiumBackground />
+      <ScrollProgress />
       <Navbar />
 
       <main>
