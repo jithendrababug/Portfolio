@@ -51,7 +51,7 @@ export default function Hero() {
             </span>
             <br />
             <span className="bg-gradient-to-r from-blue-300 via-indigo-300 to-sky-200 bg-clip-text text-transparent">
-              Building scalable apps & modern digital experiences
+              Building scalable apps & modern digital experience
             </span>
           </motion.h1>
 
