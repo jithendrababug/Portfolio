@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css"; // Tailwind styles
+document.documentElement.classList.add("dark");
+
 
 // ✅ Apply saved theme before React renders (prevents "flash" on load)
 const savedTheme = localStorage.getItem("theme"); // "dark" | "light" | null
