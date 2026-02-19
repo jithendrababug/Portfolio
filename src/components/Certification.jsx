@@ -7,69 +7,72 @@ export default function Certifications() {
       title: "Frontend Web Development",
       issuer: "Nextskill Technologies",
       date: "August 2024",
-      link: "/certificates/Intern.pdf",
+      link: "certificates/Intern.pdf",
     },
     {
       title: "My SQL",
       issuer: "Guvi",
       date: "August 2024",
-      link: "/certificates/MySQL.png",
+      link: "certificates/MySQL.png",
     },
     {
       title: "GIT",
       issuer: "Guvi",
       date: "August 2024",
-      link: "/certificates/GIT.png",
+      link: "certificates/GIT.png",
     },
     {
       title: "ChatGPT",
       issuer: "Guvi",
       date: "December 2024",
-      link: "/certificates/Chatgpt.png",
+      link: "certificates/Chatgpt.png",
     },
     {
       title: "AI for Beginners",
       issuer: "HP Life",
       date: "June 2025",
-      link: "/certificates/HPLife.pdf",
+      link: "certificates/HPLife.pdf",
     },
     {
       title: "Google AI Essentials",
       issuer: "Google (Coursera)",
       date: "July 2025",
-      link: "/certificates/GoogleAI.pdf",
+      link: "certificates/GoogleAI.pdf",
     },
     {
       title: "MS Excel",
       issuer: "Guvi",
       date: "July 2025",
-      link: "/certificates/MSExcel.png",
+      link: "certificates/MSExcel.png",
     },
     {
       title: "Python",
       issuer: "Guvi",
       date: "July 2025",
-      link: "/certificates/Python.png",
+      link: "certificates/Python.png",
     },
     {
       title: "Agile Project Management",
       issuer: "HP Life",
       date: "August 2025",
-      link: "/certificates/Agile.pdf",
+      link: "certificates/Agile.pdf",
     },
     {
       title: "HTML & CSS",
       issuer: "Guvi",
       date: "August 2025",
-      link: "/certificates/HTMLCSS.png",
+      link: "certificates/HTMLCSS.png",
     },
     {
       title: "UI / UX for Beginners",
       issuer: "Great Learning",
       date: "August 2025",
-      link: "/certificates/UIUX.pdf",
+      link: "certificates/UIUX.pdf",
     },
   ];
+
+  // ✅ Works in both localhost + GitHub Pages subpath (/Portfolio/)
+  const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
 
   const container = {
     hidden: {},
@@ -91,6 +94,7 @@ export default function Certifications() {
               Certifications
             </span>
           </h2>
+
           <p className="mt-4 text-center text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Certifications demonstrating continuous learning and upskilling.
           </p>
@@ -126,7 +130,7 @@ export default function Certifications() {
               </p>
 
               <a
-                href={cert.link}
+                href={withBase(cert.link)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex items-center justify-center w-full px-4 py-2.5 rounded-lg
