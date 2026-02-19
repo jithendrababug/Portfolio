@@ -3,7 +3,7 @@ import { useRef } from "react";
 export default function SpotlightCard({
   children,
   className = "",
-  as: Tag = "div",
+  spotlightClassName = "",
 }) {
   const ref = useRef(null);
 
@@ -11,30 +11,29 @@ export default function SpotlightCard({
     const el = ref.current;
     if (!el) return;
 
-    const r = el.getBoundingClientRect();
-    const x = e.clientX - r.left;
-    const y = e.clientY - r.top;
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
-    el.style.setProperty("--sx", `${x}px`);
-    el.style.setProperty("--sy", `${y}px`);
-  };
-
-  const onLeave = () => {
-    const el = ref.current;
-    if (!el) return;
-    // Move spotlight away smoothly
-    el.style.setProperty("--sx", `-999px`);
-    el.style.setProperty("--sy", `-999px`);
+    el.style.setProperty("--mx", `${x}px`);
+    el.style.setProperty("--my", `${y}px`);
   };
 
   return (
-    <Tag
+    <div
       ref={ref}
       onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      className={`spotlight-card ${className}`}
+      className={`relative overflow-hidden ${className}`}
     >
+      {/* spotlight */}
+      <div
+        className={`pointer-events-none absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100 ${spotlightClassName}`}
+        style={{
+          background:
+            "radial-gradient(600px circle at var(--mx) var(--my), rgba(59,130,246,0.18), transparent 40%)",
+        }}
+      />
       {children}
-    </Tag>
+    </div>
   );
 }

@@ -110,3 +110,5 @@ section {
 .spotlight-card:hover::after {
   opacity: 1;
 }
+/* smoother 3D text rendering */
+
