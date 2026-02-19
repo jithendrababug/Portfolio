@@ -28,19 +28,24 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center px-6">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center px-6"
+    >
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center"
       >
-        {/* LEFT */}
-        <div>
-          {/* badge */}
+        {/* LEFT SIDE */}
+        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
+
+          {/* Badge */}
           <motion.div
             variants={item}
             className="
+              mx-auto lg:mx-0
               inline-flex items-center gap-2 px-4 py-2 rounded-full
               border border-black/10 dark:border-white/10
               bg-white/70 dark:bg-white/5 backdrop-blur-xl
@@ -53,7 +58,7 @@ export default function Hero() {
             Available for Full-Time Software Developer Roles
           </motion.div>
 
-          {/* headline */}
+          {/* Headline */}
           <motion.h1
             variants={item}
             className="
@@ -65,17 +70,19 @@ export default function Hero() {
           >
             Full-Stack Software Developer
             <br />
+
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-300 dark:via-indigo-300 dark:to-sky-200 bg-clip-text text-transparent">
-              Building scalable systems and production-grade applications
+              Crafting scalable systems & premium digital experiences
             </span>
           </motion.h1>
 
-          {/* supporting text */}
+          {/* Description */}
           <motion.p
             variants={item}
             className="
               mt-6 text-lg leading-relaxed max-w-xl
               text-slate-600 dark:text-slate-300
+              mx-auto lg:mx-0
             "
           >
             Specialized in building reliable backend systems and refined user
@@ -99,64 +106,47 @@ export default function Hero() {
             and production-ready engineering.
           </motion.p>
 
-          {/* buttons */}
+          {/* Buttons */}
           <motion.div
             variants={item}
-            className="mt-10 flex items-center gap-4 flex-wrap sm:flex-nowrap"
+            className="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start"
           >
             <MagneticButton>
-              <motion.a
-                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
-                whileTap={reduceMotion ? {} : { scale: 0.98 }}
+              <a
                 href="#projects"
-                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold text-white
-                          bg-blue-600 hover:bg-blue-700
-                          shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
-                          transition-all inline-flex items-center justify-center"
+                className="
+                  px-7 py-3 rounded-xl font-semibold text-white
+                  bg-blue-600 hover:bg-blue-700
+                  shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
+                  transition-all
+                "
               >
                 View Projects
-              </motion.a>
+              </a>
             </MagneticButton>
 
             <MagneticButton>
-              <motion.a
-                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
-                whileTap={reduceMotion ? {} : { scale: 0.98 }}
+              <a
                 href={Resume}
                 download
-                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold
-                          border border-black/10 dark:border-white/15
-                          bg-white/70 dark:bg-white/5
-                          text-slate-800 dark:text-white
-                          hover:bg-white dark:hover:bg-white/10
-                          backdrop-blur-xl transition inline-flex items-center justify-center"
+                className="
+                  px-7 py-3 rounded-xl font-semibold
+                  border border-black/10 dark:border-white/15
+                  bg-white/70 dark:bg-white/5
+                  text-slate-800 dark:text-white
+                  hover:bg-white dark:hover:bg-white/10
+                  backdrop-blur-xl transition
+                "
               >
                 Download Resume
-              </motion.a>
-            </MagneticButton>
-
-            <MagneticButton>
-              <motion.a
-                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
-                whileTap={reduceMotion ? {} : { scale: 0.98 }}
-                href="https://github.com/jithendrababug"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold
-                          border border-black/10 dark:border-white/15
-                          bg-white/70 dark:bg-white/5
-                          text-slate-800 dark:text-white
-                          hover:bg-white dark:hover:bg-white/10
-                          backdrop-blur-xl transition inline-flex items-center justify-center"
-              >
-                View GitHub
-              </motion.a>
+              </a>
             </MagneticButton>
           </motion.div>
-          {/* stats */}
+
+          {/* Stats */}
           <motion.div
             variants={item}
-            className="mt-12 grid grid-cols-3 gap-6 max-w-lg"
+            className="mt-12 grid grid-cols-3 gap-6 max-w-lg mx-auto lg:mx-0"
           >
             {[
               { k: "4+", v: "Projects Built" },
@@ -183,13 +173,14 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* footer */}
+          {/* Footer */}
           <motion.div
             variants={item}
             className="mt-8 text-sm text-slate-500 dark:text-slate-400"
           >
             Based in India • Open to global opportunities
           </motion.div>
+
         </div>
 
         {/* RIGHT IMAGE */}
@@ -198,13 +189,14 @@ export default function Hero() {
           className="flex justify-center lg:justify-end"
         >
           <div className="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[400px]">
-            {/* glow */}
+
+            {/* Glow */}
             <div className="absolute -inset-10 rounded-full bg-gradient-to-r from-blue-500/30 via-indigo-500/25 to-sky-400/25 blur-3xl" />
 
-            {/* glass */}
+            {/* Glass */}
             <div className="absolute inset-0 rounded-full border border-black/10 dark:border-white/10 bg-white/40 dark:bg-white/5 backdrop-blur-xl" />
 
-            {/* image */}
+            {/* Image */}
             <img
               src={profilePic}
               alt="Jithendra Babu"
@@ -213,10 +205,10 @@ export default function Hero() {
                 border border-black/10 dark:border-white/15
                 shadow-[0_40px_120px_-20px_rgba(0,0,0,0.35)]
               "
-              loading="eager"
             />
           </div>
         </motion.div>
+
       </motion.div>
     </section>
   );
