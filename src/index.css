@@ -7,7 +7,6 @@
     scroll-behavior: smooth;
   }
 
-  /* Light mode: stronger contrast + premium text rendering */
   body {
     @apply bg-white text-slate-900 antialiased;
     text-rendering: geometricPrecision;
@@ -15,12 +14,10 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Dark mode: keep premium */
   .dark body {
     @apply bg-[#05070b] text-slate-100;
   }
 
-  /* Improve default paragraph readability */
   p {
     line-height: 1.75;
   }
@@ -48,14 +45,7 @@
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-18px, -14px); }
 }
-* {
-  scroll-behavior: smooth;
-}
 
-section {
-  transform: translateZ(0);
-  will-change: transform;
-}
 /* ===== ELITE Spotlight Hover Effect ===== */
 .spotlight-card {
   position: relative;
@@ -110,5 +100,3 @@ section {
 .spotlight-card:hover::after {
   opacity: 1;
 }
-/* smoother 3D text rendering */
-

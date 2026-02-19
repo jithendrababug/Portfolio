@@ -66,7 +66,7 @@ export default function Hero() {
             Full-Stack Software Developer
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-300 dark:via-indigo-300 dark:to-sky-200 bg-clip-text text-transparent">
-              Crafting scalable systems & premium digital experiences
+              Building scalable systems and production-grade applications
             </span>
           </motion.h1>
 
@@ -100,41 +100,59 @@ export default function Hero() {
           </motion.p>
 
           {/* buttons */}
-          <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
-            <MagneticButton strength={28}>
-              <a
+          <motion.div
+            variants={item}
+            className="mt-10 flex items-center gap-4 flex-wrap sm:flex-nowrap"
+          >
+            <MagneticButton>
+              <motion.a
+                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
+                whileTap={reduceMotion ? {} : { scale: 0.98 }}
                 href="#projects"
-                className="
-                  inline-block
-                  px-7 py-3 rounded-xl font-semibold text-white
-                  bg-blue-600 hover:bg-blue-700
-                  shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
-                  transition-all
-                "
+                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold text-white
+                          bg-blue-600 hover:bg-blue-700
+                          shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
+                          transition-all inline-flex items-center justify-center"
               >
                 View Projects
-              </a>
+              </motion.a>
             </MagneticButton>
 
-            <MagneticButton strength={30}>
-              <a
+            <MagneticButton>
+              <motion.a
+                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
+                whileTap={reduceMotion ? {} : { scale: 0.98 }}
                 href={Resume}
                 download
-                className="
-                  inline-block
-                  px-7 py-3 rounded-xl font-semibold
-                  border border-black/10 dark:border-white/15
-                  bg-white/70 dark:bg-white/5
-                  text-slate-800 dark:text-white
-                  hover:bg-white dark:hover:bg-white/10
-                  backdrop-blur-xl transition
-                "
+                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold
+                          border border-black/10 dark:border-white/15
+                          bg-white/70 dark:bg-white/5
+                          text-slate-800 dark:text-white
+                          hover:bg-white dark:hover:bg-white/10
+                          backdrop-blur-xl transition inline-flex items-center justify-center"
               >
                 Download Resume
-              </a>
+              </motion.a>
+            </MagneticButton>
+
+            <MagneticButton>
+              <motion.a
+                whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
+                whileTap={reduceMotion ? {} : { scale: 0.98 }}
+                href="https://github.com/jithendrababug"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 whitespace-nowrap px-7 py-3 rounded-xl font-semibold
+                          border border-black/10 dark:border-white/15
+                          bg-white/70 dark:bg-white/5
+                          text-slate-800 dark:text-white
+                          hover:bg-white dark:hover:bg-white/10
+                          backdrop-blur-xl transition inline-flex items-center justify-center"
+              >
+                View GitHub
+              </motion.a>
             </MagneticButton>
           </motion.div>
-
           {/* stats */}
           <motion.div
             variants={item}

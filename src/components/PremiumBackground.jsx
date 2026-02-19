@@ -1,66 +1,56 @@
 export default function PremiumBackground() {
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10">
-      {/* LIGHT MODE (ultra-premium) */}
+    <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      {/* LIGHT MODE (UPGRADED / NOT WHITE-PLAIN) */}
       <div className="absolute inset-0 dark:hidden">
-        {/* clean base */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#fbfdff] via-white to-[#eef4ff]" />
+        {/* Base (slightly tinted, not white-flat) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f6f9ff] via-[#f8fbff] to-[#f3f7ff]" />
 
-        {/* depth vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(15,23,42,0.05),transparent_55%)]" />
+        {/* Mesh glows (stronger) */}
+        <div className="absolute -top-[20%] -right-[10%] h-[700px] w-[700px] rounded-full bg-blue-500/22 blur-[140px]" />
+        <div className="absolute -bottom-[22%] -left-[12%] h-[760px] w-[760px] rounded-full bg-indigo-500/20 blur-[160px]" />
+        <div className="absolute top-[18%] left-[28%] h-[520px] w-[520px] rounded-full bg-sky-400/14 blur-[140px]" />
 
-        {/* luminous blobs */}
-        <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-blue-500/12 blur-3xl animate-[float1_10s_ease-in-out_infinite]" />
-        <div className="absolute -bottom-48 -right-48 h-[640px] w-[640px] rounded-full bg-indigo-500/10 blur-3xl animate-[float2_12s_ease-in-out_infinite]" />
-        <div className="absolute top-[18%] right-[18%] h-[380px] w-[380px] rounded-full bg-sky-400/10 blur-3xl animate-[float1_12s_ease-in-out_infinite]" />
+        {/* Premium sheen / depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.18),transparent_55%),radial-gradient(circle_at_75%_30%,rgba(99,102,241,0.16),transparent_58%),radial-gradient(circle_at_55%_85%,rgba(14,165,233,0.12),transparent_60%)]" />
 
-        {/* premium sheen drift */}
-        <div className="absolute inset-0 opacity-80 bg-[radial-gradient(circle_at_25%_15%,rgba(59,130,246,0.14),transparent_55%),radial-gradient(circle_at_80%_25%,rgba(99,102,241,0.12),transparent_55%),radial-gradient(circle_at_55%_80%,rgba(59,130,246,0.10),transparent_60%)] animate-[bgDrift_16s_ease-in-out_infinite]" />
+        {/* Light rays (subtle) */}
+        <div className="absolute -top-40 left-1/2 h-[520px] w-[1200px] -translate-x-1/2 rotate-[-8deg] bg-gradient-to-r from-transparent via-blue-500/10 to-transparent blur-3xl opacity-60" />
+        <div className="absolute top-10 left-1/2 h-[420px] w-[1050px] -translate-x-1/2 rotate-[10deg] bg-gradient-to-r from-transparent via-indigo-500/08 to-transparent blur-3xl opacity-60" />
 
-        {/* ultra subtle grid */}
+        {/* Grid (fade it out towards bottom, premium) */}
         <div
-          className="absolute inset-0 opacity-[0.055]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
               "linear-gradient(to right, rgba(15,23,42,0.35) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.35) 1px, transparent 1px)",
-            backgroundSize: "54px 54px",
+            backgroundSize: "64px 64px",
             maskImage:
-              "radial-gradient(ellipse at 50% 15%, black 60%, transparent 100%)",
+              "radial-gradient(ellipse at 50% 28%, black 55%, transparent 100%)",
             WebkitMaskImage:
-              "radial-gradient(ellipse at 50% 15%, black 60%, transparent 100%)",
+              "radial-gradient(ellipse at 50% 28%, black 55%, transparent 100%)",
           }}
         />
 
-        {/* premium noise */}
-        <div className="absolute inset-0 opacity-[0.05] bg-noise" />
-      </div>
+        {/* Vignette (makes it feel expensive) */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_55%,rgba(15,23,42,0.06)_100%)]" />
 
-      {/* DARK MODE (keep premium but add depth) */}
-      <div className="absolute inset-0 hidden dark:block">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#05070b] via-[#070b14] to-[#0b1326]" />
-
-        {/* depth vignette */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,0.06),transparent_60%)]" />
-
-        <div className="absolute inset-0 opacity-55 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.18),transparent_50%),radial-gradient(circle_at_80%_30%,rgba(99,102,241,0.16),transparent_55%),radial-gradient(circle_at_65%_80%,rgba(59,130,246,0.12),transparent_55%)] animate-[bgDrift_14s_ease-in-out_infinite]" />
-
+        {/* Noise (inline, no index.css needed) */}
         <div
-          className="absolute inset-0 opacity-[0.11]"
+          className="absolute inset-0 opacity-[0.045]"
           style={{
             backgroundImage:
-              "linear-gradient(to right, rgba(15,23,42,0.65) 1px, transparent 1px), linear-gradient(to bottom, rgba(15,23,42,0.65) 1px, transparent 1px)",
-            backgroundSize: "46px 46px",
-            maskImage:
-              "radial-gradient(ellipse at 50% 20%, black 60%, transparent 100%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at 50% 20%, black 60%, transparent 100%)",
+              "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E\")",
+            backgroundSize: "220px 220px",
           }}
         />
+      </div>
 
-        <div className="absolute inset-0 opacity-[0.06] bg-noise" />
-
-        <div className="absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-blue-400/14 blur-3xl animate-[float1_10s_ease-in-out_infinite]" />
-        <div className="absolute -bottom-48 -right-48 h-[640px] w-[640px] rounded-full bg-indigo-400/14 blur-3xl animate-[float2_12s_ease-in-out_infinite]" />
+      {/* DARK MODE (keep your premium dark, unchanged feel) */}
+      <div className="absolute inset-0 hidden dark:block">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#05070b] via-[#070b14] to-[#0b1326]" />
+        <div className="absolute -top-[20%] -right-[10%] h-[700px] w-[700px] rounded-full bg-blue-500/20 blur-[160px]" />
+        <div className="absolute -bottom-[22%] -left-[12%] h-[760px] w-[760px] rounded-full bg-indigo-500/18 blur-[170px]" />
       </div>
     </div>
   );

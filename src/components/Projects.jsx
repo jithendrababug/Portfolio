@@ -66,7 +66,7 @@ export default function Projects() {
       kind: "laptop", // laptop | phone
       image: iotImg,
       description:
-        "Production-style IoT dashboard with sensor cards, alerts, and data-driven UI — built for real monitoring workflows.",
+        "Developed a production-style IoT monitoring dashboard with real-time sensor visualization, alert detection, and persistent data storage. Implemented REST API integration, PostgreSQL database, and responsive UI to simulate real industrial monitoring workflows.",
       tags: ["React", "PostgreSQL", "API", "Cloud"],
       live: "https://jithendrababug.github.io/IoT-Dashboard/",
       code: "https://github.com/jithendrababug/IoT-Dashboard",
@@ -76,7 +76,7 @@ export default function Projects() {
       kind: "laptop",
       image: drainageImg,
       description:
-        "Mobile IoT app for drainage monitoring and blockage detection with real-time sensor data views and admin login.",
+        "Built a Flutter-based IoT mobile application for real-time drainage monitoring and blockage detection. Integrated sensor data visualization, authentication system, and optimized mobile interface to support smart infrastructure monitoring.",
       tags: ["Flutter", "IoT", "Realtime", "UI"],
       live: null,
       code: "https://github.com/jithendrababug/Application-for-Drainage-Monitoring-and-Blockage-Detection-using-Flutter",
@@ -86,7 +86,7 @@ export default function Projects() {
       kind: "laptop",
       image: portfolioImg,
       description:
-        "Modern responsive portfolio built with React + Tailwind + motion — focused on clarity, speed, and premium UI.",
+        "Designed and developed a premium responsive portfolio using React, Tailwind CSS, and Framer Motion. Implemented advanced animations, theme switching, and performance optimization to deliver modern, high-quality user experience.",
       tags: ["React", "Tailwind", "Framer Motion"],
       live: "https://jithendrababug.github.io/Portfolio",
       code: "#", // put your repo link here

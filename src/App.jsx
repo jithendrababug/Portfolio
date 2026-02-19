@@ -1,4 +1,3 @@
-document.documentElement.classList.add("dark");
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -13,12 +12,12 @@ import CursorGlow from "./components/CursorGlow";
 import PremiumBackground from "./components/PremiumBackground";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress";
-
-
+import SmoothScroll from "./components/SmoothScroll";
 
 export default function App() {
   return (
     <div className="font-sans min-h-screen">
+      <SmoothScroll />
       <CursorGlow />
       <PremiumBackground />
       <ScrollProgress />
