@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
+import TiltCard from "./TiltCard";
 
 // ✅ CHANGE THESE FILENAMES to match your real files in: src/assets/projects/
 import iotImg from "../assets/projects/iot.png";
@@ -130,7 +131,8 @@ export default function Projects() {
             const isReverse = idx % 2 === 1;
 
             return (
-              <motion.article
+              <TiltCard>
+                <motion.article
                 key={p.title}
                 variants={card}
                 whileHover={{ y: -6 }}
@@ -211,6 +213,7 @@ export default function Projects() {
                   </div>
                 </div>
               </motion.article>
+              </TiltCard>
             );
           })}
         </motion.div>

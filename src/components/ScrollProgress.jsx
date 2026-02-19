@@ -1,28 +1,59 @@
-import { useEffect, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
 
 export default function ScrollProgress() {
-  const [p, setP] = useState(0);
 
-  useEffect(() => {
-    const onScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const next = height > 0 ? (scrollTop / height) * 100 : 0;
-      setP(next);
-    };
+  // Track scroll progress
+  const { scrollYProgress } = useScroll();
 
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  // Smooth spring animation
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.2,
+  });
 
   return (
-    <div className="fixed left-0 top-0 z-[999] h-[3px] w-full bg-transparent">
-      <div
-        className="h-full rounded-r-full bg-gradient-to-r from-blue-500 via-indigo-500 to-sky-400 transition-[width] duration-75"
-        style={{ width: `${p}%` }}
+    <>
+      {/* main progress line */}
+      <motion.div
+        style={{ scaleX }}
+        className="
+          fixed top-0 left-0 right-0 z-[9999]
+          h-[3px]
+          origin-left
+          bg-gradient-to-r
+          from-blue-500
+          via-indigo-500
+          to-sky-400
+        "
       />
-    </div>
+
+      {/* glow layer */}
+      <motion.div
+        style={{ scaleX }}
+        className="
+          fixed top-0 left-0 right-0 z-[9998]
+          h-[6px]
+          origin-left
+          bg-gradient-to-r
+          from-blue-500
+          via-indigo-500
+          to-sky-400
+          blur-md
+          opacity-50
+        "
+      />
+
+      {/* ultra thin highlight line */}
+      <motion.div
+        style={{ scaleX }}
+        className="
+          fixed top-0 left-0 right-0 z-[9999]
+          h-[1px]
+          origin-left
+          bg-white/80 dark:bg-white/40
+        "
+      />
+    </>
   );
 }

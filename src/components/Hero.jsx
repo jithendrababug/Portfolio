@@ -1,6 +1,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import profilePic from "../assets/Jithendra Babu G.jpeg";
 import Resume from "../assets/JithendraBabuG.pdf";
+import MagneticButton from "./MagneticButton";
 
 export default function Hero() {
   const reduceMotion = useReducedMotion();
@@ -64,7 +65,6 @@ export default function Hero() {
           >
             Full-Stack Software Developer
             <br />
-
             <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 dark:from-blue-300 dark:via-indigo-300 dark:to-sky-200 bg-clip-text text-transparent">
               Crafting scalable systems & premium digital experiences
             </span>
@@ -101,36 +101,38 @@ export default function Hero() {
 
           {/* buttons */}
           <motion.div variants={item} className="mt-10 flex flex-wrap gap-4">
-            <motion.a
-              whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
-              whileTap={reduceMotion ? {} : { scale: 0.98 }}
-              href="#projects"
-              className="
-                px-7 py-3 rounded-xl font-semibold text-white
-                bg-blue-600 hover:bg-blue-700
-                shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
-                transition-all
-              "
-            >
-              View Projects
-            </motion.a>
+            <MagneticButton strength={28}>
+              <a
+                href="#projects"
+                className="
+                  inline-block
+                  px-7 py-3 rounded-xl font-semibold text-white
+                  bg-blue-600 hover:bg-blue-700
+                  shadow-[0_20px_60px_-15px_rgba(59,130,246,0.6)]
+                  transition-all
+                "
+              >
+                View Projects
+              </a>
+            </MagneticButton>
 
-            <motion.a
-              whileHover={reduceMotion ? {} : { y: -2, scale: 1.02 }}
-              whileTap={reduceMotion ? {} : { scale: 0.98 }}
-              href={Resume}
-              download
-              className="
-                px-7 py-3 rounded-xl font-semibold
-                border border-black/10 dark:border-white/15
-                bg-white/70 dark:bg-white/5
-                text-slate-800 dark:text-white
-                hover:bg-white dark:hover:bg-white/10
-                backdrop-blur-xl transition
-              "
-            >
-              Download Resume
-            </motion.a>
+            <MagneticButton strength={30}>
+              <a
+                href={Resume}
+                download
+                className="
+                  inline-block
+                  px-7 py-3 rounded-xl font-semibold
+                  border border-black/10 dark:border-white/15
+                  bg-white/70 dark:bg-white/5
+                  text-slate-800 dark:text-white
+                  hover:bg-white dark:hover:bg-white/10
+                  backdrop-blur-xl transition
+                "
+              >
+                Download Resume
+              </a>
+            </MagneticButton>
           </motion.div>
 
           {/* stats */}
@@ -173,9 +175,11 @@ export default function Hero() {
         </div>
 
         {/* RIGHT IMAGE */}
-        <motion.div variants={item} className="flex justify-center lg:justify-end">
+        <motion.div
+          variants={item}
+          className="flex justify-center lg:justify-end"
+        >
           <div className="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[400px]">
-
             {/* glow */}
             <div className="absolute -inset-10 rounded-full bg-gradient-to-r from-blue-500/30 via-indigo-500/25 to-sky-400/25 blur-3xl" />
 
@@ -191,6 +195,7 @@ export default function Hero() {
                 border border-black/10 dark:border-white/15
                 shadow-[0_40px_120px_-20px_rgba(0,0,0,0.35)]
               "
+              loading="eager"
             />
           </div>
         </motion.div>
