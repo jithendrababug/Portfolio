@@ -2,77 +2,80 @@ import { motion } from "framer-motion";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 export default function Certifications() {
+  // ✅ Keep ONLY relative paths (no BASE_URL here)
   const certifications = [
     {
       title: "Frontend Web Development",
       issuer: "Nextskill Technologies",
       date: "August 2024",
-      link: `${import.meta.env.BASE_URL}certificates/Intern.pdf`,
+      file: "certificates/Intern.pdf",
     },
     {
       title: "My SQL",
       issuer: "Guvi",
       date: "August 2024",
-      link: `${import.meta.env.BASE_URL}certificates/MySQL.png`,
+      file: "certificates/MySQL.png",
     },
     {
       title: "GIT",
       issuer: "Guvi",
       date: "August 2024",
-      link: `${import.meta.env.BASE_URL}certificates/GIT.png`,
+      file: "certificates/GIT.png",
     },
     {
       title: "ChatGPT",
       issuer: "Guvi",
       date: "December 2024",
-      link: `${import.meta.env.BASE_URL}certificates/Chatgpt.png`,
+      file: "certificates/Chatgpt.png",
     },
     {
       title: "AI for Beginners",
       issuer: "HP Life",
       date: "June 2025",
-      link: `${import.meta.env.BASE_URL}certificates/HPLife.pdf`,
+      file: "certificates/HPLife.pdf",
     },
     {
       title: "Google AI Essentials",
       issuer: "Google (Coursera)",
       date: "July 2025",
-      link: `${import.meta.env.BASE_URL}certificates/GoogleAI.pdf`,
+      file: "certificates/GoogleAI.pdf",
     },
     {
       title: "MS Excel",
       issuer: "Guvi",
       date: "July 2025",
-      link: `${import.meta.env.BASE_URL}certificates/MSExcel.png`,
+      file: "certificates/MSExcel.png",
     },
     {
       title: "Python",
       issuer: "Guvi",
       date: "July 2025",
-      link: `${import.meta.env.BASE_URL}certificates/Python.png`,
+      file: "certificates/Python.png",
     },
     {
       title: "Agile Project Management",
       issuer: "HP Life",
       date: "August 2025",
-      link: `${import.meta.env.BASE_URL}certificates/Agile.pdf`,
+      file: "certificates/Agile.pdf",
     },
     {
       title: "HTML & CSS",
       issuer: "Guvi",
       date: "August 2025",
-      link: `${import.meta.env.BASE_URL}certificates/HTMLCSS.png`,
+      file: "certificates/HTMLCSS.png",
     },
     {
       title: "UI / UX for Beginners",
       issuer: "Great Learning",
       date: "August 2025",
-      link: `${import.meta.env.BASE_URL}certificates/UIUX.pdf`,
+      file: "certificates/UIUX.pdf",
     },
   ];
 
-  // ✅ Works in both localhost + GitHub Pages subpath (/Portfolio/)
-  const withBase = (path) => `${import.meta.env.BASE_URL}${path}`;
+  // ✅ Works for BOTH:
+  // Local:    /certificates/Intern.pdf
+  // GitHub:   /Portfolio/certificates/Intern.pdf
+  const toPublicUrl = (filePath) => `${import.meta.env.BASE_URL}${filePath}`;
 
   const container = {
     hidden: {},
@@ -130,7 +133,7 @@ export default function Certifications() {
               </p>
 
               <a
-                href={withBase(cert.link)}
+                href={toPublicUrl(cert.file)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 inline-flex items-center justify-center w-full px-4 py-2.5 rounded-lg
