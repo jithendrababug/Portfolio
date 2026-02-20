@@ -201,7 +201,9 @@ export default function Hero() {
               src={profilePic}
               alt="Jithendra Babu"
               className="
-                relative z-10 w-full h-full object-cover rounded-full
+                relative z-10 w-full h-full object-cover
+                object-top
+                rounded-full
                 border border-black/10 dark:border-white/15
                 shadow-[0_40px_120px_-20px_rgba(0,0,0,0.35)]
               "
